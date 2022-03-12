@@ -7,13 +7,13 @@ class Node:
 class Solution:
     def __init__(self):
         self.head=None
-    
+
     def printAll(self):
         v=self.head
         while(v):
             print(v.val)
             v=v.next
-    
+
     def printAllReverse(self):
         v=self.head
         while(v.next!=None):
@@ -31,7 +31,7 @@ class Solution:
             self.head.prev=n
             self.head=n
             v=self.head
-        
+
     def insertInBetween(self,prevnode,data):
         n=Node(data)
         if prevnode.next==None:
@@ -42,7 +42,7 @@ class Solution:
             prevnode.next.prev=n
             n.prev=prevnode
             prevnode.next=n
-            
+
     def insertAtEnd(self,data):
         if self.head==None:
             self.head=Node(data)
@@ -53,7 +53,7 @@ class Solution:
                 v=v.next
             v.next=n
             n.prev=v
-    
+
     def delete(self,data):
         n=Node(data)
         v=self.head
@@ -72,7 +72,7 @@ class Solution:
                     return
             v=v.next
         return "Not Found"
-    
+
     def search(self,data):
         n=Node(data)
         v=self.head
@@ -83,10 +83,7 @@ class Solution:
             cnt+=1
             v=v.next
         return "Not Found"
-        
-        
-        
-        
+
 sol=Solution()
 
 n1=Node(5)
@@ -102,7 +99,6 @@ n2.next=n4.prev=n3
 n3.next=n5.prev=n4
 n4.next=n6.prev=n5
 n5.next=n6
-
 
 sol.insertInBetween(n2,100)
 sol.insertAtEnd(999)
